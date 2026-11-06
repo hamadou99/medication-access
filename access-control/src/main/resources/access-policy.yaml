@@ -1,0 +1,40 @@
+# Tableau de règles du plan de médication partagé.
+# Toute combinaison absente est refusée. Hypothèses à valider avec le service : voir docs/L2-modele-regles.md.
+version: "pmp-2026-11-a"
+resources:
+  PLAN_MEDICATION:
+    CONSULTER_PLAN:
+      roles: [PATIENT, REPRESENTANT, MEDECIN, PHARMACIEN, SOIGNANT]
+      emergency: true
+      levelBased: true
+      atcEvent: ATC_DOC_READ
+      chEmedDocument: PMLC
+    INSCRIRE_TRAITEMENT:
+      roles: [MEDECIN]
+      atcEvent: ATC_DOC_CREATE
+      chEmedDocument: MTP
+    PRESCRIRE:
+      roles: [MEDECIN]
+      atcEvent: ATC_DOC_CREATE
+      chEmedDocument: PRE
+    ENREGISTRER_DELIVRANCE:
+      roles: [PHARMACIEN]
+      atcEvent: ATC_DOC_CREATE
+      chEmedDocument: DIS
+    MODIFIER_TRAITEMENT:
+      roles: [MEDECIN]
+      atcEvent: ATC_DOC_UPDATE
+      chEmedDocument: PADV
+    EMETTRE_AVIS_PHARMACEUTIQUE:
+      roles: [PHARMACIEN]
+      atcEvent: ATC_DOC_CREATE
+      chEmedDocument: PADV
+  JOURNAL_ACCES:
+    CONSULTER_JOURNAL:
+      roles: [PATIENT, REPRESENTANT, AUDITEUR]
+      levelBased: true
+      atcEvent: ATC_LOG_READ
+    CONTROLER_ACCES:
+      roles: [AUDITEUR]
+      global: true
+      atcEvent: ATC_LOG_READ

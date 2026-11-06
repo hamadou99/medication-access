@@ -1,0 +1,5 @@
+ch\unige\mssn\pmp\access\AccessDecisionEngineTest.class
+ch\unige\mssn\pmp\access\FakeFacts.class
+ch\unige\mssn\pmp\access\AccessPolicyTest.class
+ch\unige\mssn\pmp\access\RuleMatrixTest.class
+ch\unige\mssn\pmp\access\AuditHasherTest.class

@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: plan-medication-demo
+  datasource:
+    url: ${PMP_DB_URL:jdbc:postgresql://localhost:5432/pmp}
+    username: ${PMP_DB_APP_USER:pmp_app}
+    password: ${PMP_DB_APP_PASSWORD:}
+  flyway:
+    url: ${PMP_DB_URL:jdbc:postgresql://localhost:5432/pmp}
+    user: ${PMP_DB_OWNER_USER:pmp_owner}
+    password: ${PMP_DB_OWNER_PASSWORD:}
+    locations:
+      - classpath:db/migration/access
+      - classpath:db/migration/plan
+      - classpath:db/seed
+
+pmp:
+  access:
+    # Aucune valeur par défaut : l'application ne démarre pas sans clé du journal.
+    audit-key: ${PMP_AUDIT_KEY:}
+  security:
+    issuer: ${PMP_OIDC_ISSUER:http://localhost:8180/realms/pmp}
+    jwk-set-uri: ${PMP_OIDC_JWKS:http://localhost:8180/realms/pmp/protocol/openid-connect/certs}
+    audience: pmp-api
+
+server:
+  error:
+    include-message: never
+    include-stacktrace: never
+
+logging:
+  level:
+    root: INFO

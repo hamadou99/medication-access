@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: ch.unige.mssn.pmp.access.AccessDecisionEngineTest
+-------------------------------------------------------------------------------
+Tests run: 35, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.288 s -- in ch.unige.mssn.pmp.access.AccessDecisionEngineTest

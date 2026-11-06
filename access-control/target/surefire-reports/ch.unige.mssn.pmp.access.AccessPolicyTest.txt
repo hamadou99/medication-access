@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: ch.unige.mssn.pmp.access.AccessPolicyTest
+-------------------------------------------------------------------------------
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.004 s -- in ch.unige.mssn.pmp.access.AccessPolicyTest

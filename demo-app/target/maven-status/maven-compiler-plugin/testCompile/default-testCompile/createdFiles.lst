@@ -1,0 +1,13 @@
+ch\unige\mssn\pmp\demo\support\TestTokens.class
+ch\unige\mssn\pmp\demo\support\ApiClient.class
+ch\unige\mssn\pmp\demo\support\ApiClient$Answer.class
+ch\unige\mssn\pmp\demo\steps\CucumberSpringConfiguration.class
+ch\unige\mssn\pmp\demo\FailClosedTest.class
+ch\unige\mssn\pmp\demo\support\IntegrationEnvironment.class
+ch\unige\mssn\pmp\demo\support\Personas.class
+ch\unige\mssn\pmp\demo\support\TestDatabase.class
+ch\unige\mssn\pmp\demo\SecurityBoundaryTest.class
+ch\unige\mssn\pmp\demo\steps\AccessSteps.class
+ch\unige\mssn\pmp\demo\AuditIntegrityTest.class
+ch\unige\mssn\pmp\demo\ScenariosTest.class
+ch\unige\mssn\pmp\demo\support\Personas$Persona.class

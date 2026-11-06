@@ -1,0 +1,15 @@
+# Exemple de phase 4 : ce qui changerait pour les vaccinations. Les rôles retenus sont à confirmer avec le service.
+version: "vaccinations-a"
+resources:
+  VACCINATIONS:
+    CONSULTER_VACCINATIONS:
+      roles: [PATIENT, REPRESENTANT, MEDECIN, PHARMACIEN, SOIGNANT]
+      emergency: true
+      levelBased: true
+      atcEvent: ATC_DOC_READ
+    ENREGISTRER_VACCINATION:
+      roles: [MEDECIN, PHARMACIEN, SOIGNANT]
+      atcEvent: ATC_DOC_CREATE
+    ANNULER_VACCINATION:
+      roles: [MEDECIN]
+      atcEvent: ATC_DOC_UPDATE

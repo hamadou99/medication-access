@@ -1,0 +1,306 @@
+{
+ "resourceType": "Bundle",
+ "meta": {
+  "profile": [
+   "http://fhir.ch/ig/ch-emed-epr/StructureDefinition/ch-emed-epr-document-medicationdispense"
+  ]
+ },
+ "identifier": {
+  "system": "urn:ietf:rfc:3986",
+  "value": "{{DOCUMENT_UUID}}"
+ },
+ "type": "document",
+ "timestamp": "{{TIMESTAMP}}",
+ "entry": [
+  {
+   "fullUrl": "{{DOCUMENT_UUID}}",
+   "resource": {
+    "resourceType": "Composition",
+    "id": "CompositionDis1",
+    "meta": {
+     "profile": [
+      "http://fhir.ch/ig/ch-emed-epr/StructureDefinition/ch-emed-epr-composition-medicationdispense"
+     ]
+    },
+    "language": "fr-CH",
+    "identifier": {
+     "system": "urn:ietf:rfc:3986",
+     "value": "{{DOCUMENT_UUID}}"
+    },
+    "status": "final",
+    "type": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "version": "http://snomed.info/sct/2011000195101",
+       "code": "82291000195104",
+       "display": "Medication dispense document (record artifact)"
+      },
+      {
+       "system": "http://loinc.org",
+       "code": "60593-1",
+       "display": "Medication dispensed.extended Document"
+      }
+     ]
+    },
+    "subject": {
+     "reference": "urn:uuid:2dbfe659-07d0-45c7-b8df-4a48372049a3"
+    },
+    "date": "{{TIMESTAMP}}",
+    "author": [
+     {
+      "reference": "urn:uuid:213d609a-1164-459a-bb10-727516ae3d0c"
+     }
+    ],
+    "title": "Remise",
+    "confidentiality": "{{CONF_CODE}}",
+    "_confidentiality": {
+     "extension": [
+      {
+       "url": "http://fhir.ch/ig/ch-core/StructureDefinition/ch-ext-epr-confidentialitycode",
+       "valueCodeableConcept": {
+        "coding": [
+         {
+          "system": "http://snomed.info/sct",
+          "code": "{{CONF_SNOMED}}",
+          "display": "{{CONF_DISPLAY}}"
+         }
+        ]
+       }
+      }
+     ]
+    },
+    "section": [
+     {
+      "title": "Dispensation d'un médicament",
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "60590-7",
+         "display": "Medication dispensed.brief Document"
+        }
+       ]
+      },
+      "entry": [
+       {
+        "reference": "urn:uuid:73bc6454-5514-4a6d-a24c-7d9546f873a9"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:2dbfe659-07d0-45c7-b8df-4a48372049a3",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "PatientDupont",
+    "meta": {
+     "profile": [
+      "http://fhir.ch/ig/ch-emed-epr/StructureDefinition/ch-emed-epr-patient"
+     ]
+    },
+    "identifier": [
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+         "code": "MR"
+        }
+       ]
+      },
+      "system": "urn:oid:2.999.1",
+      "value": "{{PATIENT_ID}}"
+     }
+    ],
+    "name": [
+     {
+      "family": "{{PATIENT_FAMILY}}",
+      "given": [
+       "{{PATIENT_GIVEN}}"
+      ]
+     }
+    ],
+    "gender": "{{PATIENT_GENDER}}",
+    "birthDate": "{{PATIENT_BIRTHDATE}}"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:9fc8530b-b77d-4b53-8a21-fc786b697edf",
+   "resource": {
+    "resourceType": "Practitioner",
+    "id": "PractitionerCox",
+    "meta": {
+     "profile": [
+      "http://fhir.ch/ig/ch-emed-epr/StructureDefinition/ch-emed-epr-practitioner"
+     ]
+    },
+    "identifier": [
+     {
+      "system": "urn:oid:2.51.1.3",
+      "value": "{{AUTHOR_GLN}}"
+     }
+    ],
+    "name": [
+     {
+      "family": "{{AUTHOR_FAMILY}}",
+      "given": [
+       "{{AUTHOR_GIVEN}}"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:213d609a-1164-459a-bb10-727516ae3d0c",
+   "resource": {
+    "resourceType": "PractitionerRole",
+    "id": "PractitionerRoleCoxAtHug",
+    "meta": {
+     "profile": [
+      "http://fhir.ch/ig/ch-emed-epr/StructureDefinition/ch-emed-epr-practitionerrole"
+     ]
+    },
+    "practitioner": {
+     "reference": "urn:uuid:9fc8530b-b77d-4b53-8a21-fc786b697edf"
+    },
+    "organization": {
+     "reference": "urn:uuid:580fbe82-8734-4edf-ad4b-48124cdd03c6"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:580fbe82-8734-4edf-ad4b-48124cdd03c6",
+   "resource": {
+    "resourceType": "Organization",
+    "id": "OrganizationHug",
+    "meta": {
+     "profile": [
+      "http://fhir.ch/ig/ch-emed-epr/StructureDefinition/ch-emed-epr-organization"
+     ]
+    },
+    "identifier": [
+     {
+      "system": "urn:oid:2.51.1.3",
+      "value": "7601000234438"
+     }
+    ],
+    "name": "Hôpitaux universitaires de Genève",
+    "address": [
+     {
+      "line": [
+       "Rue Gabrielle-Perret-Gentil 4"
+      ],
+      "city": "Genève",
+      "postalCode": "1205",
+      "country": "CH"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:73bc6454-5514-4a6d-a24c-7d9546f873a9",
+   "resource": {
+    "resourceType": "MedicationDispense",
+    "id": "MedicationDispenseTriatecDis",
+    "meta": {
+     "profile": [
+      "http://fhir.ch/ig/ch-emed-epr/StructureDefinition/ch-emed-epr-medicationdispense"
+     ]
+    },
+    "contained": [
+     {
+      "resourceType": "Medication",
+      "id": "MedicationTriatec",
+      "meta": {
+       "profile": [
+        "http://fhir.ch/ig/ch-emed-epr/StructureDefinition/ch-emed-epr-medication"
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://www.whocc.no/atc",
+         "code": "{{ATC}}",
+         "display": "{{MEDICATION}}"
+        }
+       ],
+       "text": "{{MEDICATION}}"
+      }
+     }
+    ],
+    "extension": [
+     {
+      "extension": [
+       {
+        "url": "id",
+        "valueIdentifier": {
+         "system": "urn:ietf:rfc:3986",
+         "value": "{{PRESCRIPTION_UUID}}"
+        }
+       },
+       {
+        "url": "externalDocumentId",
+        "valueIdentifier": {
+         "system": "urn:ietf:rfc:3986",
+         "value": "{{PRESCRIPTION_DOCUMENT_UUID}}"
+        }
+       }
+      ],
+      "url": "http://fhir.ch/ig/ch-emed/StructureDefinition/ch-emed-ext-prescription"
+     },
+     {
+      "extension": [
+       {
+        "url": "id",
+        "valueIdentifier": {
+         "system": "urn:ietf:rfc:3986",
+         "value": "{{TREATMENT_UUID}}"
+        }
+       },
+       {
+        "url": "externalDocumentId",
+        "valueIdentifier": {
+         "system": "urn:ietf:rfc:3986",
+         "value": "{{TREATMENT_DOCUMENT_UUID}}"
+        }
+       }
+      ],
+      "url": "http://fhir.ch/ig/ch-emed/StructureDefinition/ch-emed-ext-treatmentplan"
+     }
+    ],
+    "identifier": [
+     {
+      "system": "urn:ietf:rfc:3986",
+      "value": "{{ITEM_UUID}}"
+     }
+    ],
+    "status": "completed",
+    "medicationReference": {
+     "reference": "#MedicationTriatec"
+    },
+    "performer": [
+     {
+      "actor": {
+       "reference": "urn:uuid:213d609a-1164-459a-bb10-727516ae3d0c"
+      }
+     }
+    ],
+    "quantity": {
+     "value": 1,
+     "unit": "Package",
+     "system": "http://snomed.info/sct",
+     "code": "1681000175101"
+    },
+    "whenHandedOver": "{{DATE}}",
+    "dosageInstruction": [
+     {
+      "text": "{{DOSAGE}}"
+     }
+    ]
+   }
+  }
+ ]
+}
